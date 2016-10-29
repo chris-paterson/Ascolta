@@ -16,7 +16,10 @@ class PlayViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let url = DocumentManager.listDocuments()!
-        audioManager.changeFile(url: url)
+        let bookName = url.lastPathComponent
+        
+        let book = Book(name: bookName, url: url)
+        audioManager.changeFile(book: book)
     }
 
     override func didReceiveMemoryWarning() {

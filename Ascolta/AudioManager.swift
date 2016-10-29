@@ -12,24 +12,30 @@ import AVFoundation
 class AudioManager {
     
     var audioPlayer = AVAudioPlayer()
+    var currentBook: Book?
     
     init() {
         setupSharedInstance()
     }
     
     public func play() {
-        audioPlayer.play()
+        if let book = currentBook {
+            audioPlayer.currentTime = book.currentTime
+            audioPlayer.play()
+        }
     }
     
     public func pause() {
         if audioPlayer.isPlaying {
             audioPlayer.pause()
+            currentBook!.currentTime = audioPlayer.currentTime
         }
     }
     
-    public func changeFile(url: URL) {
+    public func changeFile(book: Book) {
+        currentBook = book
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer = try AVAudioPlayer(contentsOf: book.url)
             audioPlayer.prepareToPlay()
         }
         catch {

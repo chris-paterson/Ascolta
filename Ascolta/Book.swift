@@ -10,12 +10,22 @@ import Foundation
 
 struct Book {
     let name: String
-    let path: URL
-    var position: Int
+    let url: URL
+    let locationManager: BookLocationManager
     
-    init(name: String, path: URL) {
+    var currentTime: Double {
+        get {
+            return locationManager.locationForBook
+        }
+        
+        set {
+            locationManager.locationForBook = newValue
+        }
+    }
+    
+    init(name: String, url: URL) {
         self.name = name
-        self.path = path
-        self.position = 4
+        self.url = url
+        self.locationManager = BookLocationManager(bookName: name)
     }
 }

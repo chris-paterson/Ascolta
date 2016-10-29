@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A39E9ED1DC4DD520019C7ED /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A39E9EC1DC4DD520019C7ED /* Book.swift */; };
+		5A39E9EF1DC4E1C00019C7ED /* BookLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A39E9EE1DC4E1C00019C7ED /* BookLocationManager.swift */; };
 		5AA928331DC4B3F800FE142E /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA928321DC4B3F800FE142E /* DocumentManager.swift */; };
 		5ADDCCA71DC32D2E00D78720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCCA61DC32D2E00D78720 /* AppDelegate.swift */; };
 		5ADDCCAC1DC32D2E00D78720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDCCAA1DC32D2E00D78720 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		5A39E9EC1DC4DD520019C7ED /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		5A39E9EE1DC4E1C00019C7ED /* BookLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLocationManager.swift; sourceTree = "<group>"; };
 		5AA928321DC4B3F800FE142E /* DocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		5ADDCCA31DC32D2E00D78720 /* Ascolta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ascolta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADDCCA61DC32D2E00D78720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A39E9F01DC4E23B0019C7ED /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5ADDCCD41DC32D9400D78720 /* AudioManager.swift */,
+				5AA928321DC4B3F800FE142E /* DocumentManager.swift */,
+				5A39E9EE1DC4E1C00019C7ED /* BookLocationManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		5A39E9F11DC4E24A0019C7ED /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				5ADDCCAD1DC32D2E00D78720 /* Assets.xcassets */,
+				5ADDCCAF1DC32D2E00D78720 /* LaunchScreen.storyboard */,
+				5ADDCCB21DC32D2E00D78720 /* Info.plist */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		5A39E9F21DC4E25D0019C7ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A39E9EC1DC4DD520019C7ED /* Book.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		5AD78CFE1DC4B044003AACAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,13 +143,10 @@
 			children = (
 				5ADDCCA61DC32D2E00D78720 /* AppDelegate.swift */,
 				5ADDCCAA1DC32D2E00D78720 /* Main.storyboard */,
-				5ADDCCAD1DC32D2E00D78720 /* Assets.xcassets */,
-				5ADDCCAF1DC32D2E00D78720 /* LaunchScreen.storyboard */,
-				5ADDCCB21DC32D2E00D78720 /* Info.plist */,
-				5ADDCCD41DC32D9400D78720 /* AudioManager.swift */,
-				5AA928321DC4B3F800FE142E /* DocumentManager.swift */,
+				5A39E9F21DC4E25D0019C7ED /* Models */,
+				5A39E9F01DC4E23B0019C7ED /* Managers */,
 				5ADDCCD61DC32DBF00D78720 /* PlayViewController.swift */,
-				5A39E9EC1DC4DD520019C7ED /* Book.swift */,
+				5A39E9F11DC4E24A0019C7ED /* Support */,
 			);
 			path = Ascolta;
 			sourceTree = "<group>";
@@ -288,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ADDCCD51DC32D9400D78720 /* AudioManager.swift in Sources */,
+				5A39E9EF1DC4E1C00019C7ED /* BookLocationManager.swift in Sources */,
 				5ADDCCD71DC32DBF00D78720 /* PlayViewController.swift in Sources */,
 				5AA928331DC4B3F800FE142E /* DocumentManager.swift in Sources */,
 				5A39E9ED1DC4DD520019C7ED /* Book.swift in Sources */,
