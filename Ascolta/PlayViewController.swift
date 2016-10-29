@@ -27,6 +27,10 @@ class PlayViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        audioManager.pause()
+    }
+    
     @IBAction func play(_ sender: AnyObject) {
         audioManager.play()
     }
