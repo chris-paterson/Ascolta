@@ -15,6 +15,8 @@ class PlayViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let url = DocumentManager.listDocuments()!
+        audioManager.changeFile(url: url)
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A39E9ED1DC4DD520019C7ED /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A39E9EC1DC4DD520019C7ED /* Book.swift */; };
+		5AA928331DC4B3F800FE142E /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA928321DC4B3F800FE142E /* DocumentManager.swift */; };
 		5ADDCCA71DC32D2E00D78720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCCA61DC32D2E00D78720 /* AppDelegate.swift */; };
 		5ADDCCAC1DC32D2E00D78720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDCCAA1DC32D2E00D78720 /* Main.storyboard */; };
 		5ADDCCAE1DC32D2E00D78720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDCCAD1DC32D2E00D78720 /* Assets.xcassets */; };
@@ -15,8 +17,6 @@
 		5ADDCCC71DC32D2E00D78720 /* AscoltaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCCC61DC32D2E00D78720 /* AscoltaUITests.swift */; };
 		5ADDCCD51DC32D9400D78720 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCCD41DC32D9400D78720 /* AudioManager.swift */; };
 		5ADDCCD71DC32DBF00D78720 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCCD61DC32DBF00D78720 /* PlayViewController.swift */; };
-		5ADDCCD91DC32F7100D78720 /* HitchHikersGuide-01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDCCD81DC32F7100D78720 /* HitchHikersGuide-01.mp3 */; };
-		5ADDCCDB1DC330B600D78720 /* enV - Electronic Super Joy OST - 01 Destination.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDCCDA1DC330B600D78720 /* enV - Electronic Super Joy OST - 01 Destination.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A39E9EC1DC4DD520019C7ED /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		5AA928321DC4B3F800FE142E /* DocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		5ADDCCA31DC32D2E00D78720 /* Ascolta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ascolta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADDCCA61DC32D2E00D78720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ADDCCAB1DC32D2E00D78720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,8 +53,6 @@
 		5ADDCCC81DC32D2E00D78720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ADDCCD41DC32D9400D78720 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		5ADDCCD61DC32DBF00D78720 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
-		5ADDCCD81DC32F7100D78720 /* HitchHikersGuide-01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "HitchHikersGuide-01.mp3"; sourceTree = "<group>"; };
-		5ADDCCDA1DC330B600D78720 /* enV - Electronic Super Joy OST - 01 Destination.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "enV - Electronic Super Joy OST - 01 Destination.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +117,9 @@
 				5ADDCCAF1DC32D2E00D78720 /* LaunchScreen.storyboard */,
 				5ADDCCB21DC32D2E00D78720 /* Info.plist */,
 				5ADDCCD41DC32D9400D78720 /* AudioManager.swift */,
+				5AA928321DC4B3F800FE142E /* DocumentManager.swift */,
 				5ADDCCD61DC32DBF00D78720 /* PlayViewController.swift */,
-				5ADDCCD81DC32F7100D78720 /* HitchHikersGuide-01.mp3 */,
-				5ADDCCDA1DC330B600D78720 /* enV - Electronic Super Joy OST - 01 Destination.mp3 */,
+				5A39E9EC1DC4DD520019C7ED /* Book.swift */,
 			);
 			path = Ascolta;
 			sourceTree = "<group>";
@@ -261,10 +261,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ADDCCB11DC32D2E00D78720 /* LaunchScreen.storyboard in Resources */,
-				5ADDCCDB1DC330B600D78720 /* enV - Electronic Super Joy OST - 01 Destination.mp3 in Resources */,
 				5ADDCCAE1DC32D2E00D78720 /* Assets.xcassets in Resources */,
 				5ADDCCAC1DC32D2E00D78720 /* Main.storyboard in Resources */,
-				5ADDCCD91DC32F7100D78720 /* HitchHikersGuide-01.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +289,8 @@
 			files = (
 				5ADDCCD51DC32D9400D78720 /* AudioManager.swift in Sources */,
 				5ADDCCD71DC32DBF00D78720 /* PlayViewController.swift in Sources */,
+				5AA928331DC4B3F800FE142E /* DocumentManager.swift in Sources */,
+				5A39E9ED1DC4DD520019C7ED /* Book.swift in Sources */,
 				5ADDCCA71DC32D2E00D78720 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

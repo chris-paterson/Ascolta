@@ -12,15 +12,9 @@ import AVFoundation
 class AudioManager {
     
     var audioPlayer = AVAudioPlayer()
-    var url: URL
     
     init() {
-        let path = Bundle.main.path(forResource: "enV - Electronic Super Joy OST - 01 Destination", ofType:"mp3")!
-        url = URL(fileURLWithPath: path)
-        
-        setupPlayer()
         setupSharedInstance()
-        
     }
     
     public func play() {
@@ -33,7 +27,7 @@ class AudioManager {
         }
     }
     
-    private func setupPlayer() {
+    public func changeFile(url: URL) {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer.prepareToPlay()
