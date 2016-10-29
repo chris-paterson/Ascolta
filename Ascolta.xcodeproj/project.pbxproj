@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5ADDCCA71DC32D2E00D78720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCCA61DC32D2E00D78720 /* AppDelegate.swift */; };
-		5ADDCCA91DC32D2E00D78720 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCCA81DC32D2E00D78720 /* ViewController.swift */; };
 		5ADDCCAC1DC32D2E00D78720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDCCAA1DC32D2E00D78720 /* Main.storyboard */; };
 		5ADDCCAE1DC32D2E00D78720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDCCAD1DC32D2E00D78720 /* Assets.xcassets */; };
 		5ADDCCB11DC32D2E00D78720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDCCAF1DC32D2E00D78720 /* LaunchScreen.storyboard */; };
 		5ADDCCBC1DC32D2E00D78720 /* AscoltaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCCBB1DC32D2E00D78720 /* AscoltaTests.swift */; };
 		5ADDCCC71DC32D2E00D78720 /* AscoltaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCCC61DC32D2E00D78720 /* AscoltaUITests.swift */; };
+		5ADDCCD51DC32D9400D78720 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCCD41DC32D9400D78720 /* AudioManager.swift */; };
+		5ADDCCD71DC32DBF00D78720 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDCCD61DC32DBF00D78720 /* PlayViewController.swift */; };
+		5ADDCCD91DC32F7100D78720 /* HitchHikersGuide-01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDCCD81DC32F7100D78720 /* HitchHikersGuide-01.mp3 */; };
+		5ADDCCDB1DC330B600D78720 /* enV - Electronic Super Joy OST - 01 Destination.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDCCDA1DC330B600D78720 /* enV - Electronic Super Joy OST - 01 Destination.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		5ADDCCA31DC32D2E00D78720 /* Ascolta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ascolta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADDCCA61DC32D2E00D78720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5ADDCCA81DC32D2E00D78720 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5ADDCCAB1DC32D2E00D78720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5ADDCCAD1DC32D2E00D78720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ADDCCB01DC32D2E00D78720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		5ADDCCC21DC32D2E00D78720 /* AscoltaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AscoltaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADDCCC61DC32D2E00D78720 /* AscoltaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscoltaUITests.swift; sourceTree = "<group>"; };
 		5ADDCCC81DC32D2E00D78720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5ADDCCD41DC32D9400D78720 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		5ADDCCD61DC32DBF00D78720 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		5ADDCCD81DC32F7100D78720 /* HitchHikersGuide-01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "HitchHikersGuide-01.mp3"; sourceTree = "<group>"; };
+		5ADDCCDA1DC330B600D78720 /* enV - Electronic Super Joy OST - 01 Destination.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "enV - Electronic Super Joy OST - 01 Destination.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AD78CFE1DC4B044003AACAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5ADDCC9A1DC32D2D00D78720 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,7 @@
 				5ADDCCBA1DC32D2E00D78720 /* AscoltaTests */,
 				5ADDCCC51DC32D2E00D78720 /* AscoltaUITests */,
 				5ADDCCA41DC32D2E00D78720 /* Products */,
+				5AD78CFE1DC4B044003AACAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +112,14 @@
 			isa = PBXGroup;
 			children = (
 				5ADDCCA61DC32D2E00D78720 /* AppDelegate.swift */,
-				5ADDCCA81DC32D2E00D78720 /* ViewController.swift */,
 				5ADDCCAA1DC32D2E00D78720 /* Main.storyboard */,
 				5ADDCCAD1DC32D2E00D78720 /* Assets.xcassets */,
 				5ADDCCAF1DC32D2E00D78720 /* LaunchScreen.storyboard */,
 				5ADDCCB21DC32D2E00D78720 /* Info.plist */,
+				5ADDCCD41DC32D9400D78720 /* AudioManager.swift */,
+				5ADDCCD61DC32DBF00D78720 /* PlayViewController.swift */,
+				5ADDCCD81DC32F7100D78720 /* HitchHikersGuide-01.mp3 */,
+				5ADDCCDA1DC330B600D78720 /* enV - Electronic Super Joy OST - 01 Destination.mp3 */,
 			);
 			path = Ascolta;
 			sourceTree = "<group>";
@@ -188,13 +205,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Christopher Paterson";
 				TargetAttributes = {
 					5ADDCCA21DC32D2D00D78720 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = R8W4J98NNX;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 					5ADDCCB61DC32D2E00D78720 = {
 						CreatedOnToolsVersion = 8.0;
@@ -236,8 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ADDCCB11DC32D2E00D78720 /* LaunchScreen.storyboard in Resources */,
+				5ADDCCDB1DC330B600D78720 /* enV - Electronic Super Joy OST - 01 Destination.mp3 in Resources */,
 				5ADDCCAE1DC32D2E00D78720 /* Assets.xcassets in Resources */,
 				5ADDCCAC1DC32D2E00D78720 /* Main.storyboard in Resources */,
+				5ADDCCD91DC32F7100D78720 /* HitchHikersGuide-01.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ADDCCA91DC32D2E00D78720 /* ViewController.swift in Sources */,
+				5ADDCCD51DC32D9400D78720 /* AudioManager.swift in Sources */,
+				5ADDCCD71DC32DBF00D78720 /* PlayViewController.swift in Sources */,
 				5ADDCCA71DC32D2E00D78720 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +364,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -386,6 +415,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -514,6 +544,7 @@
 				5ADDCCCD1DC32D2E00D78720 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5ADDCCCE1DC32D2E00D78720 /* Build configuration list for PBXNativeTarget "AscoltaTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +553,7 @@
 				5ADDCCD01DC32D2E00D78720 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5ADDCCD11DC32D2E00D78720 /* Build configuration list for PBXNativeTarget "AscoltaUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +562,7 @@
 				5ADDCCD31DC32D2E00D78720 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
