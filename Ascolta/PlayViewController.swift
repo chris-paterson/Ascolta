@@ -21,11 +21,6 @@ class PlayViewController: UIViewController {
         let book = Book(name: bookName, url: url)
         audioManager.changeFile(book: book)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewWillDisappear(_ animated: Bool) {
         audioManager.pause()
