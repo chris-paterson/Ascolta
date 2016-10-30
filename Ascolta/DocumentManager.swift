@@ -10,16 +10,32 @@ import Foundation
 
 class DocumentManager {
     
-    static func listDocuments() -> URL? {
+    static func getBookList() -> [Book] {
+        var books = [Book]()
+        if let directoryContents = getDocuments() {
+            for url in directoryContents {
+                let bookName = url.lastPathComponent
+                books.append(Book(name: bookName, url: url))
+            }
+        }
+        
+        return books
+    }
+    
+    static func getNumberOfBooks() -> Int {
+        if let directoryContents = getDocuments() {
+            return directoryContents.count
+        }
+        
+        return 0
+    }
+    
+    private static func getDocuments() -> [URL]? {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         do {
             let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil, options: [])
             
-            for item in directoryContents {
-                print(item.absoluteString)
-            }
-            
-            return directoryContents[0]
+           return directoryContents
         }
         catch {
             print(error.localizedDescription)

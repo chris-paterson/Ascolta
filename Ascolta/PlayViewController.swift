@@ -15,11 +15,9 @@ class PlayViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let url = DocumentManager.listDocuments()!
-        let bookName = url.lastPathComponent
-        
-        let book = Book(name: bookName, url: url)
-        audioManager.changeFile(book: book)
+        let books = DocumentManager.getBookList()
+        audioManager.changeFile(book: books[0])
+        print(DocumentManager.getNumberOfBooks())
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -32,5 +30,9 @@ class PlayViewController: UIViewController {
 
     @IBAction func pause(_ sender: AnyObject) {
         audioManager.pause()
+    }
+    
+    @IBAction func resetDefaults(_ sender: Any) {
+        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
     }
 }
