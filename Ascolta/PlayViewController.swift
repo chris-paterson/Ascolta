@@ -49,15 +49,24 @@ class PlayViewController: UIViewController {
     
     func play() {
         audioManager.play()
-        controllImageView.image = pauseIcon
-        state = .playing
+        updateState(newState: .playing)
     }
     
     func pause() {
         audioManager.pause()
         saveBookPosition()
-        controllImageView.image = playIcon
-        state = .paused
+        updateState(newState: .paused)
+    }
+    
+    func updateState(newState: State) {
+        switch newState {
+        case .playing:
+            controllImageView.image = pauseIcon
+            state = .playing
+        case .paused:
+            controllImageView.image = playIcon
+            state = .paused
+        }
     }
     
     private func saveBookPosition() {
@@ -71,6 +80,7 @@ class PlayViewController: UIViewController {
         if let sourceViewController = segue.source as? BookTableViewController {
             if let passedBook = sourceViewController.selectedBook {
                 saveBookPosition()
+                updateState(newState: .paused)
                 currentBook = passedBook
                 audioManager.changeFile(book: currentBook!)
             }
