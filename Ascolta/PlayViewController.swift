@@ -9,29 +9,47 @@
 import UIKit
 
 class PlayViewController: UIViewController {
+    enum State {
+        case playing
+        case paused
+    }
+    
     let audioManager: AudioManager = AudioManager.sharedInstance
+    let playIcon = #imageLiteral(resourceName: "play")
+    let pauseIcon = #imageLiteral(resourceName: "pause")
+    
+    var state: State = .paused
+    
+    @IBOutlet weak var controllImageView: UIImageView!
     
     var currentBook: Book?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        controllImageView.image = playIcon
+        let toggleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PlayViewController.togglePlayPause))
+        
+        
+        
+        controllImageView.isUserInteractionEnabled = true
+        controllImageView.addGestureRecognizer(toggleTapGestureRecognizer)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-//        audioManager.pause()
         saveBookPosition()
     }
     
-    @IBAction func play(_ sender: AnyObject) {
-        audioManager.play()
-    }
-
-    @IBAction func pause(_ sender: AnyObject) {
-        audioManager.pause()
-    }
-    
-    @IBAction func resetDefaults(_ sender: Any) {
-        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+    func togglePlayPause() {
+        if state == .paused {
+            audioManager.play()
+            controllImageView.image = pauseIcon
+            state = .playing
+        } else if state == .playing {
+            audioManager.pause()
+            controllImageView.image = playIcon
+            state = .paused
+        }
     }
     
     private func saveBookPosition() {

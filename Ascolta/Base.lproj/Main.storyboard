@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,56 +21,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWf-3q-Lvg">
-                                <rect key="frame" x="16" y="20" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Eyf-4H-dck"/>
-                                </constraints>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UFY-n7-OCe"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eqr-D1-1pv">
-                                <rect key="frame" x="317" y="20" width="42" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6H-7z-Gej">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
-                                        <state key="normal" title="Pause"/>
-                                        <connections>
-                                            <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="abZ-Uh-LmU"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="54J-jm-aaQ"/>
-                                </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBJ-SE-dOt">
-                                <rect key="frame" x="127" y="75" width="100" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reset Defualts"/>
-                                <connections>
-                                    <action selector="resetDefaults:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JaV-hf-2Ve"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-BH-zYP">
-                                <rect key="frame" x="145" y="256" width="84" height="30"/>
+                                <rect key="frame" x="145" y="46" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show Books"/>
                                 <connections>
                                     <segue destination="gMd-Qu-wSS" kind="presentation" id="cfE-N3-SSd"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b40-dc-9uL">
+                                <rect key="frame" x="142.5" y="288" width="90" height="90"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="90" id="CNC-IG-wgM"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="DCt-1S-j5S"/>
+                                    <constraint firstAttribute="width" constant="90" id="yhL-Fb-Pvj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eqr-D1-1pv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Guh-Y4-zqA"/>
-                            <constraint firstItem="aWf-3q-Lvg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dqS-5l-aFa"/>
-                            <constraint firstItem="eqr-D1-1pv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="r16-21-PCA"/>
-                            <constraint firstItem="aWf-3q-Lvg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="s7p-fP-Oy5"/>
+                            <constraint firstItem="b40-dc-9uL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="i8B-YY-VBB"/>
+                            <constraint firstItem="b40-dc-9uL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nB5-ed-pRx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="controllImageView" destination="b40-dc-9uL" id="wjL-9O-a3c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,8 +56,6 @@
         <!--Book Table View Controller-->
         <scene sceneID="E6w-EJ-nWP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VDb-FV-dcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="alr-GB-7ok" userLabel="Exit" sceneMemberID="exit"/>
                 <tableViewController id="ZgO-F2-62z" customClass="BookTableViewController" customModule="Ascolta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Uq-1N-UXB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -92,7 +66,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QKu-oy-xfE" id="TFu-hq-eEr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -121,6 +95,8 @@
                         <segue destination="alr-GB-7ok" kind="unwind" identifier="unwindToPlayer" unwindAction="unwindToPlayerWithSegue:" id="xdb-II-9nE"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDb-FV-dcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="alr-GB-7ok" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1760.8" y="36.431784107946029"/>
         </scene>

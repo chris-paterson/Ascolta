@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0DB1301DC6919300F906EC /* SleepTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0DB12F1DC6919300F906EC /* SleepTimer.swift */; };
 		5A39E9ED1DC4DD520019C7ED /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A39E9EC1DC4DD520019C7ED /* Book.swift */; };
 		5A39E9EF1DC4E1C00019C7ED /* BookLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A39E9EE1DC4E1C00019C7ED /* BookLocationManager.swift */; };
 		5A4CD26B1DC5176E0002B0EC /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CD26A1DC5176E0002B0EC /* BookTableViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A0DB12F1DC6919300F906EC /* SleepTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepTimer.swift; sourceTree = "<group>"; };
 		5A39E9EC1DC4DD520019C7ED /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		5A39E9EE1DC4E1C00019C7ED /* BookLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLocationManager.swift; sourceTree = "<group>"; };
 		5A4CD26A1DC5176E0002B0EC /* BookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				5ADDCCD61DC32DBF00D78720 /* PlayViewController.swift */,
 				5A4CD26A1DC5176E0002B0EC /* BookTableViewController.swift */,
 				5A39E9F11DC4E24A0019C7ED /* Support */,
+				5A0DB12F1DC6919300F906EC /* SleepTimer.swift */,
 			);
 			path = Ascolta;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				5ADDCCD71DC32DBF00D78720 /* PlayViewController.swift in Sources */,
 				5AA928331DC4B3F800FE142E /* DocumentManager.swift in Sources */,
 				5A39E9ED1DC4DD520019C7ED /* Book.swift in Sources */,
+				5A0DB1301DC6919300F906EC /* SleepTimer.swift in Sources */,
 				5ADDCCA71DC32D2E00D78720 /* AppDelegate.swift in Sources */,
 				5A4CD26B1DC5176E0002B0EC /* BookTableViewController.swift in Sources */,
 			);
