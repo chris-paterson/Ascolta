@@ -18,12 +18,11 @@ class PlayViewController: UIViewController {
     let playIcon = #imageLiteral(resourceName: "play")
     let pauseIcon = #imageLiteral(resourceName: "pause")
     
+    var currentBook: Book?
     var state: State = .paused
     
     @IBOutlet weak var controllImageView: UIImageView!
     
-    var currentBook: Book?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,14 +41,23 @@ class PlayViewController: UIViewController {
     
     func togglePlayPause() {
         if state == .paused {
-            audioManager.play()
-            controllImageView.image = pauseIcon
-            state = .playing
+            play()
         } else if state == .playing {
-            audioManager.pause()
-            controllImageView.image = playIcon
-            state = .paused
+            pause()
         }
+    }
+    
+    func play() {
+        audioManager.play()
+        controllImageView.image = pauseIcon
+        state = .playing
+    }
+    
+    func pause() {
+        audioManager.pause()
+        saveBookPosition()
+        controllImageView.image = playIcon
+        state = .paused
     }
     
     private func saveBookPosition() {
