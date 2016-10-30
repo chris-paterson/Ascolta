@@ -9,9 +9,11 @@
 //import Foundation
 import AVFoundation
 
+private let _AudioManagerSharedInstance = AudioManager()
 class AudioManager {
+    static let sharedInstance = AudioManager()
     
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
     var currentBook: Book?
     
     init() {
@@ -28,7 +30,9 @@ class AudioManager {
     public func pause() {
         if audioPlayer.isPlaying {
             audioPlayer.pause()
-            currentBook!.currentTime = audioPlayer.currentTime
+            if var book = currentBook {
+                book.savePosition(time: currentBookTime())
+            }
         }
     }
     
@@ -51,5 +55,9 @@ class AudioManager {
         catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func currentBookTime() -> Double {
+        return audioPlayer.currentTime
     }
 }

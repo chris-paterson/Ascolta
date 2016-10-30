@@ -9,13 +9,20 @@
 import UIKit
 
 class BookTableViewController: UITableViewController {
-
+    var selectedBook: Book?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "unwindToPlayer", sender: sender)
+    }
+    
 }
 
 extension BookTableViewController {
+    
     var books: [Book] {
         return DocumentManager.getBookList()
     }
@@ -28,45 +35,17 @@ extension BookTableViewController {
         return DocumentManager.getNumberOfBooks()
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let book = books[indexPath.row]
-        
-        
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let book = books[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath)
         cell.textLabel?.text = book.name
         return cell
     }
+        
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let book = books[indexPath.row]
+        selectedBook = book
+        self.performSegue(withIdentifier: "unwindToPlayer", sender: self)
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

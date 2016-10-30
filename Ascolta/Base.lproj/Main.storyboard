@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nv3-LW-awR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Play View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PlayViewController" customModule="Ascolta" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +60,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show Books"/>
                                 <connections>
-                                    <action selector="showBooks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kpM-eo-q22"/>
+                                    <segue destination="gMd-Qu-wSS" kind="presentation" id="cfE-N3-SSd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,16 +72,16 @@
                             <constraint firstItem="aWf-3q-Lvg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="s7p-fP-Oy5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="tQ5-QX-5Je"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="-703"/>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
-        <!--Item-->
+        <!--Book Table View Controller-->
         <scene sceneID="E6w-EJ-nWP">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDb-FV-dcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="alr-GB-7ok" userLabel="Exit" sceneMemberID="exit"/>
                 <tableViewController id="ZgO-F2-62z" customClass="BookTableViewController" customModule="Ascolta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Uq-1N-UXB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -102,28 +102,45 @@
                             <outlet property="delegate" destination="ZgO-F2-62z" id="L10-De-4uw"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="8lS-kN-Kus"/>
+                    <navigationItem key="navigationItem" id="pzA-nV-xG0">
+                        <barButtonItem key="leftBarButtonItem" id="yXv-0H-RV0">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VZy-A9-XNC">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="back:" destination="ZgO-F2-62z" eventType="touchUpInside" id="CGN-yy-JrQ"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="back:" destination="ZgO-F2-62z" id="gvX-YY-3Fy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="alr-GB-7ok" kind="unwind" identifier="unwindToPlayer" unwindAction="unwindToPlayerWithSegue:" id="xdb-II-9nE"/>
+                    </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="822" y="37"/>
+            <point key="canvasLocation" x="1760.8" y="36.431784107946029"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Rih-7z-pjM">
+        <!--Navigation Controller-->
+        <scene sceneID="YvL-XB-Mun">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="nv3-LW-awR" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gMd-Qu-wSS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="ZFj-Ls-PQv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ftt-yH-GR9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Hck-gk-Muk"/>
-                        <segue destination="ZgO-F2-62z" kind="relationship" relationship="viewControllers" id="nio-Jp-Og3"/>
+                        <segue destination="ZgO-F2-62z" kind="relationship" relationship="rootViewController" id="Rzt-cT-32o"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d0g-2A-5wv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NSe-KU-AP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+            <point key="canvasLocation" x="821.60000000000002" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>

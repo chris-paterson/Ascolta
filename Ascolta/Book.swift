@@ -11,7 +11,8 @@ import Foundation
 struct Book {
     let name: String
     let url: URL
-    let locationManager: BookLocationManager
+    
+    private let locationManager: BookLocationManager
     
     var currentTime: Double {
         get {
@@ -27,5 +28,9 @@ struct Book {
         self.name = name
         self.url = url
         self.locationManager = BookLocationManager(bookName: name)
+    }
+    
+    mutating func savePosition(time: Double) {
+        currentTime = time
     }
 }

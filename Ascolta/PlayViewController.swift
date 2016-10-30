@@ -9,19 +9,17 @@
 import UIKit
 
 class PlayViewController: UIViewController {
-    let audioManager: AudioManager = AudioManager()
+    let audioManager: AudioManager = AudioManager.sharedInstance
+    
+    var currentBook: Book?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        let books = DocumentManager.getBookList()
-        audioManager.changeFile(book: books[0])
-        print(DocumentManager.getNumberOfBooks())
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        audioManager.pause()
+//        audioManager.pause()
+        saveBookPosition()
     }
     
     @IBAction func play(_ sender: AnyObject) {
@@ -34,5 +32,22 @@ class PlayViewController: UIViewController {
     
     @IBAction func resetDefaults(_ sender: Any) {
         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+    }
+    
+    private func saveBookPosition() {
+        if currentBook != nil {
+            currentBook!.savePosition(time: audioManager.currentBookTime())
+        }
+    }
+    
+    // Back button from BookTableViewController redirects here
+    @IBAction func unwindToPlayer(segue: UIStoryboardSegue) {
+        if let sourceViewController = segue.source as? BookTableViewController {
+            if let passedBook = sourceViewController.selectedBook {
+                saveBookPosition()
+                currentBook = passedBook
+                audioManager.changeFile(book: currentBook!)
+            }
+        }
     }
 }
